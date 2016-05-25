@@ -1,0 +1,28 @@
+<h1>Preguntas de Evidencia</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Pregunta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pregunta_evidencia.each do |pregunta_evidencium| %>
+      <tr>
+        <td><%= pregunta_evidencium.nombre %></td>
+        <td><%= pregunta_evidencium.pregunta %></td>
+        <td><%= link_to 'Ver', pregunta_evidencium, :class => "btn btn-default" %></td>
+        <td><%= link_to 'Editar', edit_pregunta_evidencium_path(pregunta_evidencium), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Eliminar', pregunta_evidencium, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar la pregunta?' }, :class => "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear', new_pregunta_evidencium_path, :class => "btn btn-default" %>
+<a class="btn btn-default" href="/mains" role="button">Volver</a>

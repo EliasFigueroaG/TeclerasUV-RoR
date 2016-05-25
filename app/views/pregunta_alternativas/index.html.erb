@@ -1,0 +1,40 @@
+<h1>Preguntas Alternativas</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Pregunta</th>
+      <th>Respuesta1</th>
+      <th>Respuesta2</th>
+      <th>Respuesta3</th>
+      <th>Respuesta4</th>
+      <th>Verdadera</th>
+      <th>Explicacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pregunta_alternativas.each do |pregunta_alternativa| %>
+      <tr>
+        <td><%= pregunta_alternativa.nombre %></td>
+        <td><%= pregunta_alternativa.pregunta %></td>
+        <td><%= pregunta_alternativa.respuesta1 %></td>
+        <td><%= pregunta_alternativa.respuesta2 %></td>
+        <td><%= pregunta_alternativa.respuesta3 %></td>
+        <td><%= pregunta_alternativa.respuesta4 %></td>
+        <td><%= pregunta_alternativa.verdadera %></td>
+        <td><%= pregunta_alternativa.explicacion %></td>
+        <td><%= link_to 'Ver', pregunta_alternativa , :class => "btn btn-default"  %></td>
+        <td><%= link_to 'Editar', edit_pregunta_alternativa_path(pregunta_alternativa), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Eliminar', pregunta_alternativa,  method: :delete, data: { confirm: '¿Está seguro que quiere eliminar la pregunta?'}, :class => "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear', new_pregunta_alternativa_path, :class => "btn btn-default" %>
+<a class="btn btn-default" href="/mains" role="button">Volver</a>

@@ -1,0 +1,2 @@
+module PreguntaLikertsHelper
+end

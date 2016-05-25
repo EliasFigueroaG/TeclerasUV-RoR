@@ -1,0 +1,10 @@
+class CreatePreguntaEvidencia < ActiveRecord::Migration
+  def change
+    create_table :pregunta_evidencia do |t|
+      t.string :nombre
+      t.text :pregunta
+
+      t.timestamps null: false
+    end
+  end
+end

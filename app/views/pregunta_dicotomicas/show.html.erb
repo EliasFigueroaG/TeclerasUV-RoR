@@ -1,0 +1,22 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @pregunta_dicotomica.nombre %>
+</p>
+
+<p>
+  <strong>Pregunta:</strong>
+  <%= @pregunta_dicotomica.pregunta %>
+</p>
+
+<p>
+  <strong>Verdadero:</strong>
+  <%= @pregunta_dicotomica.verdadero %>
+</p>
+
+<p>
+  <strong>Explicacion:</strong>
+  <%= @pregunta_dicotomica.explicacion %>
+</p>
+
+<%= link_to 'Editar', edit_pregunta_dicotomica_path(@pregunta_dicotomica), :class => "btn btn-default" %>
+<%= link_to 'Volver', pregunta_dicotomicas_path, :class => "btn btn-default" %>

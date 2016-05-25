@@ -1,0 +1,32 @@
+<h1>Preguntas Dicotomicas</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Pregunta</th>
+      <th>Verdadero</th>
+      <th>Explicacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pregunta_dicotomicas.each do |pregunta_dicotomica| %>
+      <tr>
+        <td><%= pregunta_dicotomica.nombre %></td>
+        <td><%= pregunta_dicotomica.pregunta %></td>
+        <td><%= pregunta_dicotomica.verdadero %></td>
+        <td><%= pregunta_dicotomica.explicacion %></td>
+        <td><%= link_to 'Ver', pregunta_dicotomica, :class => "btn btn-default" %></td>
+        <td><%= link_to 'Editar', edit_pregunta_dicotomica_path(pregunta_dicotomica), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Eliminar', pregunta_dicotomica, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar la pregunta?' }, :class => "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear', new_pregunta_dicotomica_path, :class => "btn btn-default" %>
+<a class="btn btn-default" href="/mains" role="button">Volver</a>

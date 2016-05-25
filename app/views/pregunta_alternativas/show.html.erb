@@ -1,0 +1,42 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @pregunta_alternativa.nombre %>
+</p>
+
+<p>
+  <strong>Pregunta:</strong>
+  <%= @pregunta_alternativa.pregunta %>
+</p>
+
+<p>
+  <strong>Respuesta 1:</strong>
+  <%= @pregunta_alternativa.respuesta1 %>
+</p>
+
+<p>
+  <strong>Respuesta 2:</strong>
+  <%= @pregunta_alternativa.respuesta2 %>
+</p>
+
+<p>
+  <strong>Respuesta 3:</strong>
+  <%= @pregunta_alternativa.respuesta3 %>
+</p>
+
+<p>
+  <strong>Respuesta 4:</strong>
+  <%= @pregunta_alternativa.respuesta4 %>
+</p>
+
+<p>
+  <strong>Verdadera:</strong>
+  <%= @pregunta_alternativa.verdadera %>
+</p>
+
+<p>
+  <strong>Explicacion:</strong>
+  <%= @pregunta_alternativa.explicacion %>
+</p>
+
+<%= link_to 'Editar', edit_pregunta_alternativa_path(@pregunta_alternativa), :class => "btn btn-default" %>
+<%= link_to 'Volver', pregunta_alternativas_path, :class => "btn btn-default" %>

@@ -1,0 +1,25 @@
+<%= form_for(@pregunta_evidencium) do |f| %>
+  <% if @pregunta_evidencium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pregunta_evidencium.errors.count, "error") %> prohibited this pregunta_evidencium from being saved:</h2>
+
+      <ul>
+      <% @pregunta_evidencium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :pregunta %><br>
+    <%= f.text_area :pregunta %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

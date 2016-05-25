@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @pregunta_likert.nombre %>
+</p>
+
+<p>
+  <strong>Pregunta:</strong>
+  <%= @pregunta_likert.pregunta %>
+</p>
+
+<%= link_to 'Editar', edit_pregunta_likert_path(@pregunta_likert), :class => "btn btn-default" %>
+<%= link_to 'Volver', pregunta_likerts_path, :class => "btn btn-default" %>

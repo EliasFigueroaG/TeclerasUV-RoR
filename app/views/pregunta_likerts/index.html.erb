@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Preguntas de Escala de Likert</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Pregunta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pregunta_likerts.each do |pregunta_likert| %>
+      <tr>
+        <td><%= pregunta_likert.nombre %></td>
+        <td><%= pregunta_likert.pregunta %></td>
+        <td><%= link_to 'Ver', pregunta_likert , :class => "btn btn-default" %></td>
+        <td><%= link_to 'Editar', edit_pregunta_likert_path(pregunta_likert) , :class => "btn btn-default"%></td>
+        <td><%= link_to 'Eliminar', pregunta_likert, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar la pregunta?'}, :class => "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear', new_pregunta_likert_path, :class => "btn btn-default"%>
+<a class="btn btn-default" href="/mains" role="button">Volver</a>
